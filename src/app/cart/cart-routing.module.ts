@@ -3,14 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { WrapperComponent } from './components/wrapper/wrapper.component';
 import { GridComponent } from './components/grid/grid.component';
 
-const routes: Routes = [{
-  path: '',
-  component: WrapperComponent
-},
-{
-  path: 'cart',
-  component: GridComponent
-}];
+const routes: Routes = [
+  {
+    path: '',
+    component: GridComponent
+  }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
