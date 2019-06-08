@@ -1,0 +1,103 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 100px auto 100px;
+    grid-template-areas: "header header" "product checkout" "footer footer";
+
+    .product {
+        grid-area: product;
+    }
+
+    .checkout {
+        display: grid;
+        grid-area: checkout;
+        grid-template-rows: 50px auto 50px;
+        grid-template-columns: 1fr;
+        grid-template-areas: "ch-title" "ch-list" "ch-footer";
+
+        .ch-title {
+            grid-area: ch-title;
+            background-color: #40c4ff;
+        }
+
+        .ch-list {
+            grid-area: ch-list;
+
+            .order-item {
+                display: grid;
+                grid-template-rows: 50px;
+                grid-template-columns: auto auto auto 50px;
+                grid-template-areas: "or-title or-qt or-price or-remove";
+                .or-title {
+                    grid-area: or-title;
+                }
+                .or-qt {
+                    grid-area: or-qt;
+                }
+                .or-price{
+                    grid-area: or-price;
+                }
+                .or-remove {
+                    grid-area: or-remove;
+                }
+            }
+        }
+
+        .ch-footer {
+            grid-area: ch-footer;
+            background-color: #4fc3f7;
+        }
+    }
+
+    .footer {
+        grid-area: footer;
+        background-color: #0d47a1;
+    }
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 150px auto;
+    grid-template-rows: 1fr;
+    grid-template-areas: "logo menu menu";
+    grid-area: header;
+    background-color: #2196f3;
+    min-height: 100px;
+
+    .logo {
+        grid-area: logo;
+        background-color: #90caf9;
+    }
+
+    .menu {
+        grid-area: menu;
+    }
+}
+
+.product-item {
+    display: grid;
+    grid-template-rows: 150px 50px 50px 40px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "product-image product-image" "product-name product-name" "product-desc product-desc" "product-price product-add";
+    border-radius: 4px;
+    border: solid 1px #e0e0e0;
+
+    .product-image {
+        grid-area: product-image;
+        background-color: #bdbdbd;
+    }
+
+    .product-name {
+        grid-area: product-name;
+    }
+
+    .product-desc {
+        grid-area: product-desc;
+    }
+    .product-add{
+        grid-area: product-add;
+    }
+    .product-price{
+        grid-area:product-price;
+    }
+}

@@ -1,2 +1,88 @@
 /* You can add global styles to this file, and also import other style files */
-@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
+// @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+body{
+    margin: 0;
+}
+.row {
+    $col-padding: 5px;
+
+    [class*="col-md-"], [class*="col-xs-"] {
+        display: inline-block;
+        vertical-align: middle;
+        padding: $col-padding;
+    }
+
+    &.align-top > [class*="col-md-"] {
+        vertical-align: top;
+    }
+
+    .col-md-none {}
+
+    @for $i from 1 to 12 {
+        .col-md-#{$i} {
+            width: calc((100% / 12) * #{$i} - #{$col-padding}*2);
+
+            @media (max-width: 768px) {
+                width: calc(100% - #{$col-padding}*2);
+            }
+        }
+
+        .col-xs-#{$i} {
+            width: calc((100% / 12) * #{$i} - #{$col-padding}*2);
+        }
+    }
+}
+
+.btn {
+    background: #eeeeee;
+    border: 0;
+    border-radius: 4px;
+
+    &:hover {
+        background: #f5f5f5;
+    }
+
+    &:focus {
+        background: #e0e0e0;
+    }
+
+    &.btn-remove {
+        color: #fff;
+        background: #d32f2f;
+
+        &:hover {
+            background: #e53935;
+        }
+
+        &:focus {
+            background: #c62828;
+        }
+    }
+}
+
+.input {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid;
+
+    &.show-arrows {
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            opacity: 1;
+        }
+    }
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-center-h{
+    display: flex;
+    align-items: center;
+}
+.padding-left{
+    padding-left: 5px;
+}

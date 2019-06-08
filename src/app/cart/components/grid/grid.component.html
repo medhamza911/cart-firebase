@@ -1,0 +1,45 @@
+<div class="grid-container">
+  <div class="header">
+    <div class="logo"></div>
+    <div class="menu"></div>
+  </div>
+  <div class="product row">
+    <div class="col-md-3"
+         *ngFor="let item of products">
+      <div class="product-item">
+        <div class="product-image"></div>
+        <div class="product-name flex-center-h padding-left">{{item.name}}</div>
+        <div class="product-desc flex-center-h padding-left">{{item.desc}}</div>
+        <div class="product-price flex-center-h padding-left">{{item.price}} TND</div>
+        <button class="product-add btn flex-center" (click)="addToCart(item)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="checkout">
+    <div class="ch-title"></div>
+    <div class="ch-list">
+      <div class="order-item"
+           *ngFor="let item of orders;index as i">
+        <div class="or-title flex-center">
+          {{item.name}}
+        </div>
+        <div class="or-qt flex-center">
+          <input type="number"
+                 class="input show-arrows"
+                 value="1">
+        </div>
+        <div class="or-price flex-center">{{item.price}} TND</div>
+        <div class="or-remove flex-center">
+          <button class="btn btn-remove" (click)="remove(i)">
+            <i class="fa fa-times"
+               aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="ch-footer flex-center-h padding-left">
+      Total: {{totalPrice()}} TND
+    </div>
+  </div>
+  <div class="footer"></div>
+</div>
